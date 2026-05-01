@@ -6,24 +6,30 @@ interface NavProps {
 
 export default function Nav({ currentPage }: NavProps) {
   return (
-    <nav className="border-b border-gray-800 px-6 py-4">
+    <nav style={{ background: "var(--cream)", borderBottom: "1px solid var(--border-soft)" }}
+         className="px-6 py-4">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-lg font-semibold hover:text-gray-300 transition"
-        >
+        <Link href="/" style={{ color: "var(--charcoal)", fontWeight: 700, fontSize: "1.2rem", textDecoration: "none" }}>
           GetNoodling
         </Link>
-        <div className="flex gap-8 text-sm">
+        <div className="flex gap-8" style={{ fontSize: "0.95rem" }}>
           <Link
             href="/scribe"
-            className={currentPage === "scribe" ? "text-white" : "hover:text-gray-300 transition"}
+            style={{
+              color: "var(--coral)",
+              fontWeight: currentPage === "scribe" ? 700 : 500,
+              textDecoration: "none",
+            }}
           >
             Swift Scribe
           </Link>
           <Link
             href="/type"
-            className={currentPage === "type" ? "text-white" : "hover:text-gray-300 transition"}
+            style={{
+              color: "var(--coral)",
+              fontWeight: currentPage === "type" ? 700 : 500,
+              textDecoration: "none",
+            }}
           >
             Swift Type
           </Link>
