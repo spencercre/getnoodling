@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -19,7 +20,19 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 py-24">
+      <section className="relative overflow-hidden">
+        <Image
+          src="/hero.png"
+          alt="Swift bird in flight"
+          width={1440}
+          height={600}
+          priority
+          className="w-full object-cover"
+          style={{ maxHeight: "600px" }}
+        />
+      </section>
+
+      <section className="px-6 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6 leading-tight">
             Stop typing.
